@@ -6,6 +6,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div className="dash">
+            
                 <button onClick={this.props.strikeFoul}>Strike</button>
                 <button onClick={this.props.strikeFoul}>Foul</button>
                 <button onClick={this.props.ball}>Ball</button>
