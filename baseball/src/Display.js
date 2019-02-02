@@ -42,7 +42,7 @@ class Display extends Component {
                     <li>Balls:{this.state.balls}</li>
                     <li>Strikes:{this.state.strikes}</li>
                 </ul>
-                <Dashboard reset={this.reset} strikeFoul={this.strikeFoul} ball={this.ball}/>
+                <Dashboard reset={this.reset} strikes={this.state.strikes} strikeFoul={this.strikeFoul} ball={this.ball}/>
             </div>
         );
     }

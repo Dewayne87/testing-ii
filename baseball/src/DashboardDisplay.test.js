@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitForDomChange } from 'react-testing-library'
+import { render, fireEvent, wait, waitForDomChange } from 'react-testing-library'
 import 'jest-dom/extend-expect';
 import Dashboard from './Dashboard';
 import Display from './Display';
@@ -28,16 +28,11 @@ describe('Baseball function tests', () => {
     })
 });
 
-test('Increases strike count', () => {
-    fireEvent.click(getByText(/strike/i));
-
-    // waitForDomChange({ strikeButton })
-    //     .then(() => console.log('DOM changed!'))
-    //     .catch(err => console.log(`Error you need to deal with: ${err}`));
-
-    // fireEvent.click(strikeButton);
+test('Increases strike count',  () => {
+    fireEvent.click(strikeButton);
     const strikeCount = displayComponent.getByText(/strikes:/i);
     expect(strikeCount).toHaveTextContent(/strikes:1/i);
+
 })
 
 test('Increases ball count', () => {
