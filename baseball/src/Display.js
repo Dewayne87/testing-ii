@@ -17,7 +17,7 @@ class Display extends Component {
             strikes: 0,
         })
     }
-    foulBall = () => {
+    ball = () => {
         if(this.state.balls < 3){
         this.setState({
             balls: this.state.balls + 1,
@@ -25,7 +25,7 @@ class Display extends Component {
             this.reset();
         }
     }
-    strike = () => {
+    strikeFoul = () => {
         if (this.state.strikes < 2) {
             this.setState({
                 strikes: this.state.strikes + 1,
@@ -37,12 +37,12 @@ class Display extends Component {
     render() {
         return (
             <div className="App">
-                <h1>At Bat:</h1>
+                <h1 data-testid="heading">At Bat:</h1>
                 <ul>
                     <li>Balls:{this.state.balls}</li>
                     <li>Strikes:{this.state.strikes}</li>
                 </ul>
-                <Dashboard reset={this.reset} strike={this.strike} foulBall={this.foulBall}/>
+                <Dashboard reset={this.reset} strikeFoul={this.strikeFoul} ball={this.ball}/>
             </div>
         );
     }
